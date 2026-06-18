@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense & Money Ledger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Expense & Money Ledger</h1>
+    </header>
+
+    <main class="container">
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            
+
+            <div class="card">
+                <h3>Total Given</h3>
+                <p id="totalGiven">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Taken</h3>
+                <p id="totalTaken">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Net Balance</h3>
+                <p id="netBalance">₹0</p>
+            </div>
+
+        </section>
+
+        <!-- Expense Section -->
+        
+        <!-- Ledger Section -->
+        <section class="section">
+
+            <h2>Money Ledger</h2>
+
+            <form id="ledgerForm">
+
+                <input
+                    type="hidden"
+                    id="transactionId"
+                >
+
+                <input
+                    type="text"
+                    id="personName"
+                    placeholder="Person Name"
+                    required
+                >
+
+                <select id="transactionType">
+
+                    <option value="Given">
+                        Given
+                    </option>
+
+                    <option value="Taken">
+                        Taken
+                    </option>
+
+                </select>
+
+                <input
+                    type="number"
+                    id="transactionAmount"
+                    placeholder="Amount"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="transactionDate"
+                    required
+                >
+
+                <button type="submit">
+                    Save Transaction
+                </button>
+
+            </form>
+
+            <input
+                type="text"
+                id="ledgerSearch"
+                placeholder="Search Person..."
+                class="search"
+            >
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Given</th>
+                            <th>Taken</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="ledgerTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- History Modal -->
+
+    <div
+        id="historyModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <span
+                id="closeModal"
+                class="close"
+            >
+                &times;
+            </span>
+
+            <h2 id="historyTitle">
+                Transaction History
+            </h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody id="historyTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
